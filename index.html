@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>CSS Documentation</title>
+</head>
+<body>
+  
+<nav id="navbar">
+    <header>CSS Documentation
+      <div class="nav-head-spacing-ln"></div>
+    </header>
+        <ul>
+            <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+            <li>
+              <a class="nav-link" href="#Advantages"
+                >Advantages</a
+              >
+            </li>
+            <li>
+              <a class="nav-link" href="#CSS_syntax ">CSS syntax</a>
+            </li>
+            <li><a class="nav-link" href="#Type_selector">Type selector</a></li>
+            <li><a class="nav-link" href="#Class_selector">Class selector</a></li>
+            <li>
+              <a class="nav-link" href="#ID_selector">ID selector</a>
+            </li>
+            <li><a class="nav-link" href="#Child_selector">Child selector</a></li>
+            <li><a class="nav-link" href="#Attribute_selector">Attribute selector</a></li>
+            <li><a class="nav-link" href="#Multiple_style_rule">Multiple style rule</a></li>
+            <li><a class="nav-link" href="#Grouping_selector">Grouping selctor</a></li>
+            <li>
+              <a class="nav-link" href="#Border_collapse_property">Border collapse property</a>
+            </li>
+            <li><a class="nav-link" href="#caption_side_property">Caption side property</a></li>
+            <li>
+              <a class="nav-link" href="#Positioning">Positioning</a>
+            </li>
+            <li><a class="nav-link" href="#Reference">Reference</a></li>
+        </ul>
+</nav>
+
+<main id="main-doc">
+    <section class="main-section" id="Introduction">
+        <header>Introduction</header>
+            <article>
+                <p>
+                Cascading Style Sheets, fondly referred to as CSS, is a simple design language intended to simplify the process of 
+                making web pages presentable.
+                </p>
+          
+                <p>
+                CSS handles the look and feel part of a web page. Using CSS, you can control the color of the text, the style of fonts, the spacing between paragraphs, 
+                how columns are sized and laid out, what background images or colors are used, as well as a variety of other effects.
+                    
+                </p>
+            <ul>
+                <li>
+                  CSS is among the core languages of the open web and is standardized across Web browsers according to W3C specifications. 
+                  Previously, development of various parts of CSS specification was done synchronously, which allowed versioning of the latest recommendations. 
+                  You might have heard about CSS1, CSS2.1, CSS3. 
+                  However, CSS4 has never become an official version.
+                </li>
+                <li>
+                  From CSS3, the scope of the specification increased significantly and the progress on different CSS modules started to differ so much, 
+                  that it became more effective to develop and release recommendations separately per module. Instead of versioning the CSS specification, 
+                  W3C now periodically takes a snapshot of the latest stable state of the CSS specification
+                </li>
+            </ul>
+        </article>
+    </section>
+    <section class="main-section" id="Advantages">
+        <header>Advantages</header>
+            <article>
+                <p>This guide assumes you have the following basic background:</p>
+          
+                <ul>
+                  <li>
+                    <strong>CSS saves time</strong> - You can write CSS once and then reuse the same sheet in multiple HTML pages. You can define a style for each HTML element 
+                    and apply it to as many web pages as you want.
+                </li>
+                  <li><strong>Pages load faster</strong> - If you are using CSS, you do not need to write HTML tag attributes every time. Just write one CSS rule of a tag and apply it to all the occurrences of that tag. So, less code means faster download times.
+                </li>
+                  <li>
+                    <strong>Multiple Device Compatibility</strong> - Style sheets allow content to be optimized for more than one type of device. By using the same HTML document, different versions of a website can be presented for handheld devices such as PDAs 
+                    and cellphones or for printing.
+                  </li>
+                </ul>
+            </article>
+    </section>
+    <section class="main-section" id="#CSS_syntax">
+        <header>CSS syntax</header>
+            <article>
+                <p>
+                  The basic goal of the Cascading Stylesheet (CSS) language is to allow a browser 
+                  engine to paint elements of the page with specific features, like colors, positioning, or decorations. 
+                  The CSS syntax reflects this goal and its basic building blocks are:
+                </p>
+          
+                <p>
+                  The property which is an identifier, that is a human-readable name, 
+                  that defines which feature is considered.
+                </p>
+                <p>
+                  The value which describe how the feature must be handled by the engine. 
+                  Each property has a set of valid values, defined by a formal grammar, 
+                  as well as a semantic meaning, implemented by the browser engine.
+
+                  <code>
+                    element { style properties }
+
+                    span {
+                      background-color: skyblue;
+                    }
+                  </code>
+                </p>
+            </article>
+    </section>
+    <section class="main-section" id="Type_selector">
+        <header>Type selector</header>
+            <article>
+              The CSS type selector matches elements by node name. 
+              In other words, it selects all elements of the given type within a document.
+                <code>
+                  > /* All <a> elements. */
+                    a {
+                      color: red;
+                    }
+                  </code>
+            </article>
+    </section>
+    <section class="main-section" id="Class_selector">
+            <header>Class selector</header>
+              <p>
+                The CSS class selector matches elements 
+                based on the contents of their class attribute.
+              </p>
+              <p>
+                <strong>Syntax</strong>
+                <code>
+                  .class_name { style properties }
+                </code>
+              </p>
+              <p>
+                <strong>Example</strong>
+                <code>
+                  .red {
+                    color: #f33;
+                  }
+                  
+                  .yellow-bg {
+                    background: #ffa;
+                  }
+                </code>
+
+              </p>
+    </section>
+    <section class="main-section" id="ID_selector">
+        <header>ID selector</header>
+            <article>
+              The CSS ID selector matches an element based on the value of the element’s id 
+              attribute. In order for the element to be selected, 
+              its id attribute must match exactly the value given in the selector.
+                <p>
+                  <strong>Syntax</strong>
+                  <code>#id_value { style properties }</code>
+                </p>
+                <p>
+                  <code>
+                    /* The element with id="demo" */
+                    #demo {
+                    border: red 2px solid;
+                    }
+                  </code>
+                </p>
+                <p>
+                  <strong>Example</strong>
+                  <code>
+                    #identified {
+                      background-color: skyblue;
+                    }
+                  </code>
+                </p>
+            </article>
+    </section>
+    <section class="main-section" id="Child_selector">
+        <header>Child selector</header>
+            <article>
+                <p>
+                  The child combinator (>) is placed between two CSS selectors. 
+                  It matches only those elements matched by the second 
+                  selector that are the direct children of elements matched by the first.
+                </p>
+          
+                <p>
+                  <strong>Syntax</strong>
+                </p>
+                <code>selector1 > selector2 { style properties }</code>
+                <p>
+                  <strong>Example</strong>
+                </p>
+          <code>
+            span {
+              background-color: white;
+            }
+            
+            div > span {
+              background-color: DodgerBlue;
+            }
+          </code>
+            </article>
+    </section>
+    <section class="main-section" id="Attribute_selector">
+        <header>Attribute selector</header>
+            <article>
+                <p>
+                  The CSS attribute selector matches elements 
+                  based on the presence or value of a given attribute.
+                </p>
+                  <code>
+                    /* <a> elements with a title attribute */
+                      a[title] {
+                        color: purple;
+                      }
+                      
+                      /* <a> elements with an href matching "https://example.org" */
+                      a[href="https://example.org"] {
+                        color: green;
+                      }
+                  </code>
+                <p>
+                  <strong>Example</strong>
+                  <code>
+                    a {
+                      color: blue;
+                    }
+                    
+                    /* Internal links, beginning with "#" */
+                    a[href^="#"] {
+                      background-color: gold;
+                    }
+                    
+                    /* Links with "example" anywhere in the URL */
+                    a[href*="example"] {
+                      background-color: silver;
+                    }
+                  </code>
+                </p>
+            </article>
+    </section>
+
+    <section class="main-section" id="Multiple_style_rule">
+        <header>Multiple style rule</header>
+            <article>
+                <p>
+                  You may need to define multiple style rules for a single element. 
+                  You can define these rules to combine multiple properties and corresponding 
+                  values into a single block as defined in the following <strong>example:</strong> 
+                </p>
+                <p>
+                  <code>
+                    h1 {
+                      color: #36C; font-weight: normal;
+                      letter-spacing: .4em;
+                      margin-bottom: 1em;
+                      text-transform: lowercase;
+                   }
+                  </code>
+                </p>
+          
+                <p>
+                  Here all the property and value pairs are separated by a semicolon (;). 
+                  You can keep them in a single line or multiple lines. 
+                  For better readability, we keep them on separate lines.
+                </p>
+            </article>
+    </section>
+
+    <section class="main-section" id="Grouping_selector">
+        <header>Grouping selector</header>
+            <article>
+                <p>The CSS grouping selector is used to select multiple elements and style them together. 
+                  This reduces the code and extra effort to declare common styles for each element. 
+                  To group selectors, each selector is separated by a space.</p>
+                <p><strong>Syntax</strong>
+                  The syntax for CSS grouping selector is as follows −
+                    <code>
+                      element, element {
+                        /*declarations*/
+                     }
+                    </code>
+                </p>
+            </article>
+    </section>
+    <section class="main-section" id="border_collapse_property">
+        <header>Border collapse property</header>
+            <article>
+                <p>
+                  The border-collapse CSS property sets whether cells inside a <table> have shared or separate borders.
+                </p>
+                <ul>
+                  <li>When cells are collapsed, the border-style value of inset behaves like groove, 
+                    and outset behaves like ridge.</li>
+                    <li>When cells are separated, the distance between cells is defined by the border-spacing property.</li>
+                </ul>
+                <p><strong>Syntax</strong>
+                <code>
+                  collapse | separate
+                </code>
+                <code>
+                  /* Keyword values */
+                    border-collapse: collapse;
+                    border-collapse: separate;
+
+                  /* Global values */
+                  border-collapse: inherit;
+                  border-collapse: initial;
+                  border-collapse: unset;
+                </code>
+              </p>
+              <p><strong>Values</strong>
+              <ul>
+                <li><strong>collapse -</strong>
+                  Adjacent cells have shared borders (the collapsed-border table rendering model).</li>
+                  <li><strong>separate - </strong>
+                  Adjacent cells have distinct borders (the separated-border table rendering model).</li>
+              </ul>
+              </p>
+            </article>
+    </section>
+
+    <section class="main-section" id="caption_side_property">
+        <header>Caption side property</header>
+            <article>
+                <p>
+                  The caption-side CSS property puts the content of a table's caption on the specified side. 
+                    The values are relative to the writing-mode of the table
+                </p>
+          
+                <p>
+                  <strong>Syntax</strong>
+                  <code>
+                    /* Directional values */
+                    caption-side: top;
+                    caption-side: bottom;
+                    
+                    /* Logical values */
+                    caption-side: block-start;
+                    caption-side: block-end;
+                    caption-side: inline-start;
+                    caption-side: inline-end;
+                  </code>
+                </p>
+                <p>
+                  The caption-side property is specified as one of the keyword values listed below.
+                </p>
+                  <strong>Values</strong>
+                <ul>
+                  <li><strong>Top -</strong>
+                    The caption box should be positioned above the table.</li>
+                  <li><strong>Bottom -</strong>
+                    The caption box should be positioned below the table</li>
+                  <li><strong>Block-start -</strong>
+                    The caption box should be positioned at the block start edge of the table.</li>
+                  <li><strong>Block-end</strong>
+                    The caption box should be positioned at the block end edge of the table.</li>
+                </ul>
+            </article>
+    </section>
+
+    <section class="main-section" id="Positioning">
+        <header>Positioning</header>
+            <article>
+              Positioning allows you to take elements out of the normal document layout flow, and make them behave differently; 
+              for example sitting on top of one another, or always remaining in the same place inside the browser viewport. 
+              This article explains the different position values, and how to use them.
+              <br>    
+              <strong>Types of positioning</strong>
+                <ul>
+                  <li>Static positioning.</li>
+                  <li>Relative positioning</li>
+                  <li>Absolute postioning</li>
+                  <li>Fixed positioning</li>
+                  <li>Sticky positioning</li>
+                </ul>
+                <p>
+                  <br>
+                  <strong>Satic Positioning</strong>
+                  <br>
+                  Static positioning is the default that every element gets — it just means 
+                  "put the element into its normal position in the document layout flow — 
+                  nothing special to see here."
+
+                  To demonstrate this, and get your example set up for future sections, 
+                  first add a class of positioned to the second p in the HTML:
+                  <code>
+                  <p class="positioned"></p>
+                  Now add the following rule to the bottom of your CSS:
+                  
+                  .positioned {
+                    position: static;
+                    background: yellow;
+                  }
+                </code>
+                </p>
+                <p>
+                  Relative positioning is the first position type we'll take a look at. 
+                  This is very similar to static positioning, except that once the positioned element has taken 
+                  its place in the normal layout flow, 
+                  you can then modify its final position, including making it overlap other elements on the page. 
+                  Go ahead and update the position declaration in your code:
+                  <code>position: relative;</code>
+                </p>
+                
+                <p>
+                  <strong>Introducing top, bottom, left, and right</strong>
+                  <code>top: 30px;
+                    left: 30px;</code>
+                </p>
+            </article>
+    </section>
+
+    <section class="main-section" id="Reference">
+        <header>Reference</header>
+            <article>
+                <ul>
+                  <li>
+                    All the documentation in this page is taken from
+                    <a
+                      href="https://developer.mozilla.org/en-US/docs/Web/CSS"
+                      target="_blank">MDN</a>
+                  </li>
+                  <li>
+                    TutorialsPoint SimplyEasyLearning
+                    <a
+                    href="https://www.tutorialspoint.com/css/index.htm"
+                    target="_blank">Tutorialspoint</a></li>
+                </ul>
+            </article>
+    </section>
+</main>
+</body>
+</html>
